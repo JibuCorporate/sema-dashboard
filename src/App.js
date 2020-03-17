@@ -1,12 +1,12 @@
 import React from 'react';
-import { Admin, Resource } from 'react-admin';
+import { Admin, Resource, userLogin } from 'react-admin';
 import users from "./users";
 import products from "./products";
 import kiosks from "./kiosks";
 import roles from "./roles";
 import Dashboard from './dashboard/Dashboard';
 
-import LoginWithTheme from "./elements/login";
+ import CustomLoginPage from "./elements/login";
 import { authProvider } from "./providers/auth";
 import { client } from "./providers/client";
 import { dataProvider } from "./providers";
@@ -17,14 +17,14 @@ const App = () => (
     authProvider={authProvider(client)}
     dataProvider={dataProvider}
     customSagas={[realTimeProvider]}
-    loginPage={LoginWithTheme}
+    loginPage={CustomLoginPage}
   >
     <Resource {...users} />
     <Resource {...products} />
     <Resource {...kiosks} />
     <Resource {...roles} />
 
-    
+     
   </Admin>
 
 );
