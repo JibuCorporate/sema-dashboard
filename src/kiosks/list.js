@@ -2,7 +2,7 @@ import React from "react";
 import { List, Datagrid, TextField, DateField } from "react-admin";
 
 export const KioskList = props => (
-  <List title="Kiosks" {...props}>
+  <List title="Kiosks" {...props} perPage={100}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
       <TextField source="name" />

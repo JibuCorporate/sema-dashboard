@@ -1,8 +1,15 @@
 import React from "react";
-import { List, Datagrid, TextField, EmailField, ReferenceField } from "react-admin";
+import { List, Datagrid, Filter, TextField, BooleanInput, TextInput,  EmailField, ReferenceField } from "react-admin";
+
+const UserFilter = (props) => (
+  <Filter {...props}>
+      <TextInput label="Search" source="username" alwaysOn />
+  </Filter>
+);
+
 
 export const UserList = props => (
-  <List title="Users" {...props}>
+  <List title="Users" {...props} perPage={100} filters={<UserFilter />}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
       <TextField source="firstName" />
