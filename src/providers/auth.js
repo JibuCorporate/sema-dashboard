@@ -42,9 +42,9 @@ function authError(error) {
 }
 
 function authLogin(params, client) {
-  const { email, password } = params;
+  const { username, password } = params;
   return client
-    .post(`/sema/login`, { usernameOrEmail: 'training', password: '123' })
+    .post(`/sema/login`, { usernameOrEmail: username, password })
     .then(response => {
       console.log('response', response);
       return response.data;

@@ -1,11 +1,11 @@
 import React from "react";
-import { List, Datagrid, TextField } from "react-admin";
+import { List, Datagrid, TextField, ImageField  } from "react-admin";
 
 export const ListProducts = props => (
-  <List title="Products" {...props}>
+  <List title="Products" {...props} perPage={100}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
-      <ImageField source="base64encoded_image" />
+      <ImageField label="Image"  source="base64Image" />
       <TextField source="description" />
       <TextField source="sku" />
       <TextField source="priceAmount" />
