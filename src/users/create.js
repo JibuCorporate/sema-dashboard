@@ -12,25 +12,19 @@ export const UserCreate = props => (
     <SimpleForm redirect={redirect}>
       <TextInput source="firstName" />
       <TextInput source="lastName" />
+      <TextInput source="email" />
       <TextInput source="username" />
       <TextInput source="password" />
       <ReferenceInput
         label="Kiosk"
         source="kiosk"
-        reference="sema/kiosks/admin"
-      >
+        reference="sema/kiosks/admin">
         <SelectInput optionText="name" />
       </ReferenceInput>
-      <TextInput source="email" />
-
-   
-
-
       <ReferenceInput
         label="Role"
         source="role"
-        reference="sema/roles/admin"
-      >
+        reference="sema/roles/admin" >
         <SelectInput optionText="authority" />
       </ReferenceInput>
     </SimpleForm>

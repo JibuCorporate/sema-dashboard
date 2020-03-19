@@ -14,14 +14,12 @@ export const UserEdit = props => (
     <SimpleForm toolbar={<EditToolbar />} redirect={redirect}>
       <TextInput source="firstName" />
       <TextInput source="lastName" />
-      <TextInput source="username" />
       <TextInput source="email" />
-
+      <TextInput source="username" />
       <ReferenceInput
         label="Role"
         source="role"
-        reference="sema/roles/admin"
-      >
+        reference="sema/roles/admin">
         <SelectInput optionText="authority" />
       </ReferenceInput>
 

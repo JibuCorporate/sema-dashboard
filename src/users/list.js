@@ -21,8 +21,7 @@ export const UserList = props => (
       <ReferenceField
         source="kiosk"
         reference="sema/kiosks/admin"
-        link={false}
-      >
+        link={false}>
         <TextField source="name" />
       </ReferenceField>
     </Datagrid>
