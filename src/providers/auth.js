@@ -3,7 +3,8 @@ import {
   AUTH_ERROR,
   AUTH_LOGIN,
   AUTH_LOGOUT,
-  AUTH_GET_PERMISSIONS
+  AUTH_GET_PERMISSIONS,
+  useRefresh
 } from "react-admin";
 import decodeJwt from "jwt-decode";
 
@@ -43,14 +44,22 @@ function authError(error) {
 
 function authLogin(params, client) {
   const { username, password } = params;
+  //const refresh = useRefresh();
   return client
     .post(`/sema/login`, { usernameOrEmail: username, password })
     .then(response => {
       console.log('response', response);
       return response.data;
     })
-    .then(({ token }) => {
-      localStorage.setItem("token", token);
+    .then(({ token, userSatus }) => {
+      console.log('active', userSatus);
+      if(userSatus){
+        localStorage.setItem("token", token);
+      }
+      if(!userSatus){
+        alert("Account is Inactive");
+      }
+      
     });
 }
 

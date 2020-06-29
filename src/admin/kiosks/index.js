@@ -6,7 +6,7 @@ import { KioskEdit } from "./edit";
 const kiosks = {
   name: "sema/kiosks/admin",
   options: {
-    label: "Kiosks"
+    label: "Franchises"
   },
   icon: AccountBalance,
   list: KioskList,
